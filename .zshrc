@@ -16,6 +16,7 @@ else
 fi
 
 [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh ] && source ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh
 [ -f ~/.zsh/history.zsh ] && source ~/.zsh/history.zsh
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
 [ -f ~/.zsh/env.zsh ] && source ~/.zsh/env.zsh

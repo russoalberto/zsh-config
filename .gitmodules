@@ -1,0 +1,9 @@
+[submodule ".zsh/ZSH-vi-mode"]
+	path = .zsh/ZSH-vi-mode
+	url = git@github.com:jeffreytse/zsh-vi-mode.git
+[submodule ".zsh/zsh-vi-mode"]
+	path = .zsh/zsh-vi-mode
+	url = git@github.com:jeffreytse/zsh-vi-mode.git
+[submodule ".zsh/zsh-autosuggestions"]
+	path = .zsh/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
