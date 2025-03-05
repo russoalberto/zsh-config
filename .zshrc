@@ -15,19 +15,21 @@ else
   export EDITOR='nvim'
 fi
 
-[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh ] && source ~/.zsh/zsh-vi-mode/zsh-vi-mode.zsh
+# Define an init function and append to zvm_after_init_commands
+function add_keybindings() {
+  source <(fzf --zsh)
+  [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+}
+zvm_after_init_commands+=(add_keybindings)
+
 [ -f ~/.zsh/history.zsh ] && source ~/.zsh/history.zsh
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
 [ -f ~/.zsh/env.zsh ] && source ~/.zsh/env.zsh
 
-source <(fzf --zsh)
-
 fpath=(/home/$USER $fpath)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/nvm/init-nvm.sh
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
@@ -35,3 +37,6 @@ source <(ng completion script)
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418
 type starship_zle-keymap-select >/dev/null || eval "$(starship init zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/alberto/.lmstudio/bin"
